@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['source-sans-pro', 'sans-serif', 'system-ui', 'ui-sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <script src="script.js" defer></script>
+    </head>
+<body class="bg-white text-slate-800 antialiased">
+  <div class="flex flex-col md:flex-row min-h-screen"></div>
+
+  <!-- Sidebar -->
+  <aside class="md:w-[260px] md:flex-none w-full bg-slate-100 border-b border-b md:border-b md:border-r border-slate-200 px-5 py-6">
+  <h2 class="text-lg font-semibold-mb-4">Filters</h2>
+  
+  <span id="multiselect-label" class="block text-sm mb-1.5">Choose Categories</span>
+
+  <div id="chips" role="group" aria-lebelledby="multiselect-label" class="flex flex-wrap gap-1.5 mb-2">
+
+  <p class="text-xs text-slate-500 md-5">
+    Only applied when "Show all" is selected.
+  </p>
+
+  <label for="show-all" class="flex items-center gap-2 text-sm cursor-pointer select-none">
+    <input type="checkbox" id="show-all" checked class="acent-red-500 cursor pointer"/>
+    <span>Show all</span>
+  </label>
+  </aside>
+
+  <!-- Main stuff -->
+   
+  <!-- ----------CONTINUE TOMMOROW----------- -->
+   
+</html>
