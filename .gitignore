@@ -6,3 +6,24 @@ venv/
 .env.*
 !.env.example
 .streamlit/secrets.toml
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+
+# Vercel local project settings
+.vercel/
+
+# Local editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+
+# Logs
+*.log
