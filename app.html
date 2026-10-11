@@ -22,8 +22,40 @@
   <div class="flex flex-col md:flex-row min-h-screen">
 
   <!-- Sidebar -->
-  <aside class="md:w-[260px] md:flex-none w-full bg-slate-100 border-b border-b md:border-b md:border-r border-slate-200 px-5 py-6">
-  <h2 class="text-lg font-semibold mb-4">Filters</h2>
+  <aside class="md:w-[260px] md:flex-none w-full bg-slate-100 border-b md:border-b md:border-r border-slate-200 px-5 py-6">
+  
+    <!-- Data source -->
+     <h2 class="text-lg font-semibold mb-3">Data Source</h2>
+
+     <div class="flex gap-2 mb-3">
+        <button type="button" data-source-tab="upload" class="source-tab flex-1 text-xs px-2 py-1.5 rounded border border-slate-200 bg-white cursor-pointer">Upload</button>
+        <button type="button" data-source-tab="paste" class="source-tab flex-1 text-xs px-2 py-1.5 rounded border border-slate-200 bg-white cursor-pointer">Paste</button>
+        <button type="button" data-source-tab="manual" class="source-tab flex-1 text-xs px-2 py-1.5 rounded border border-slate-200 bg-white cursor-pointer">Manual</button>
+     </div>
+
+     <div data-source-panel="upload" class="source-panel mb-5">
+        <label for="file-input" class="block text-xs text-slate-600 mb-5">CSV or JSON File</label>
+        <input type="file" id="file-input" accept=".csv,.json,text/csv,application/json" class="block w-full text-xs text-slate-600 file:mr-2 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-medium file:bg-blue-100 file:text-blue-900 hover:file:bg-blue-200 cursor-pointer"/>
+    </div>
+
+    <div data-source-panel="paste" class="source-panel mb-5 hidden">
+        <label for="paste-input" class="block text-xs text-slate-600 mb-1.5">Paste CSV or JSON</label>
+        <textarea id="paste-input" rows="6" spellcheck="false" class="w-full text-xs font-mono border border-slate-300 rounded px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+        <button type="button" id="paste-apply" class="mt-2 w-full text-xs px-3 py-1.5 rounded bg-blue-100 text-blue-900 border border-blue-300 hover:bg-blue-200 cursor-pointer">Apply pasted data</button>
+    </div>
+
+    <div data-source-panel="manual" class="source-panel mb-5 hidden">
+        <div class="flex gap-1.5 mb-2">
+            <input type="text" id="manual-category" placeholder="Category" class="w-0 flex-1 text-xs border border-slate-300 rounded px-2 py-1.5"/>
+            <input type="number" id="manual-value" placeholder="value" class="w-20 text-xs border border-slate-300 rounded px-2 py-1.5"/>            
+        </div>
+        <button type="button" id="manual-add" class="w-full text-xs px-3 py-1.5 rounded bg-blue-100 text-blue-900 border border-blue-300 hover:bg-blue-200 cursor-pointer">Add Row</button>
+        <div id="manual-rows" class="mt-3 space-y-1"></div>
+        <button type="button" id="manual-clear" class="mt-3 w-full text-xs px-3 py-1 rounded border border-slate-300 bg-white text-slate-500 hover:border-slate-400 cursor-pointer">Clear all rows</button>
+    </div>
+
+    <button type="button" id="reset-data" class="w-full text-xs px-3 py-1.5 rounded border border-slate-300 bg-white text-slate-600 hover:border-slate-400 cursor-pointer mb-6">Reset to sample data</button>
+    <h2 class="text-lg font-semibold mb-4">Filters</h2>
   
   <span id="multiselect-label" class="block text-sm mb-1.5">Choose Categories</span>
 
